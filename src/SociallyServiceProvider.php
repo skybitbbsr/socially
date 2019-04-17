@@ -1,6 +1,6 @@
 <?php
 
-namespace SkyBit\Socially;
+namespace SkyBit\Socially\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
