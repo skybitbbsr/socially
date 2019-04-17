@@ -1,5 +1,5 @@
 {
-    "name": "skybit/laravel-socially",
+    "name": "skybit/socially",
     "description": "Facebook and Google Signin provider",
     "type": "library",
     "require": {
