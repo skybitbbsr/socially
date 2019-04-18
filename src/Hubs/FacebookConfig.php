@@ -27,11 +27,6 @@ class FacebookConfig
      */
     private static $permissions;
 
-    public function __construct()
-    {
-        self::$permissions = env('FACEBOOK_APP_PERMISSIONS');
-    }
-
     /**
      * @return \Facebook\Facebook
      * @throws \Facebook\Exceptions\FacebookSDKException
@@ -39,6 +34,8 @@ class FacebookConfig
     public static function init()
     {
         if (!isset(self::$fb)) {
+            self::$permissions = env('FACEBOOK_APP_PERMISSIONS');
+
             self::$fb = new Facebook ([
                 'app_id' => env("FACEBOOK_APP_ID"),
                 'app_secret' => env("FACEBOOK_APP_SECRET"),

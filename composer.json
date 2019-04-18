@@ -1,6 +1,6 @@
 {
     "name": "skybit/socially",
-    "description": "Facebook and Google Signin provider",
+    "description": "Social Signin plugins provider",
     "type": "library",
     "require": {
         "php": "^7.1.3",
@@ -10,13 +10,6 @@
     "autoload": {
         "psr-4": {
             "SkyBit\\Socially\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "SkyBit\\Socially\\Providers\\SociallyServiceProvider"
-            ]
         }
     },
     "license": "MIT",
