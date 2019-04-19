@@ -9,7 +9,8 @@
     },
     "autoload": {
         "psr-4": {
-            "SkyBit\\Socially\\": "src/"
+            "SkyBit\\Socially\\": "src/",
+            "Tests\\": "tests/"
         }
     },
     "license": "MIT",
@@ -19,5 +20,8 @@
             "email": "skybit.bbsr@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^8.2@dev"
+    }
 }
