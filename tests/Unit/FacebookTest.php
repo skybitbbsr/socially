@@ -2,10 +2,22 @@
 
 namespace Tests;
 
+use SkyBit\Socially\Hubs\FacebookConfig;
+use SkyBit\Socially\Socially;
+
 class FacebookTest extends Test
 {
     public function testGetFacebookUrl()
     {
-      $this->assertEquals(4,4);
+        $socially = FacebookConfig::getFacebookLoginUrl();
+
+        $this->assertIsString($socially);
+    }
+
+    public function testGetFacebookHelper()
+    {
+        $socially = FacebookConfig::getFacebookHelper();
+
+        $this->assertIsObject($socially);
     }
 }
