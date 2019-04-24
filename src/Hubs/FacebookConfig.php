@@ -33,37 +33,54 @@ class FacebookConfig
      */
     public static function init()
     {
-        if (!isset(self::$fb)) {
-            self::$permissions = env('FACEBOOK_APP_PERMISSIONS');
+        $permissions = explode(' ', env('FACEBOOK_APP_PERMISSIONS'));
 
-            self::$fb = new Facebook ([
-                'app_id' => env("FACEBOOK_APP_ID"),
-                'app_secret' => env("FACEBOOK_APP_SECRET"),
-                'default_graph_version' => env("FACEBOOK_DEFAULT_GRAPH_VERSION")
-            ]);
+        $attributes = [
+            'app_id' => env("FACEBOOK_APP_ID"),
+            'app_secret' => env("FACEBOOK_APP_SECRET"),
+            'default_graph_version' => env("FACEBOOK_DEFAULT_GRAPH_VERSION")
+        ];
+
+        if (!isset(self::$fb)) {
+            self::$permissions = $permissions;
+
+            self::$fb = new Facebook ($attributes);
         }
         return self::$fb;
 
     }
 
     /**
-     * @return \Facebook\Helpers\FacebookRedirectLoginHelper
+     * @return \Facebook\Helpers\FacebookRedirectLoginHelper | null
      * @throws \Facebook\Exceptions\FacebookSDKException
      */
     public static function getFacebookHelper()
     {
-        return self::init()->getRedirectLoginHelper();
+        try {
+
+            $helper =  self::init()->getRedirectLoginHelper();
+
+        } catch (FacebookSDKException $e) {
+
+            error_log($e);
+            $helper = null;
+
+        }
+
+        return $helper;
     }
 
     /**
-     * @return string
+     * @throws
+     * @return mixed
      */
     public static function getFacebookLoginUrl()
     {
-        try {
-            $helper = self::getFacebookHelper();
-            return $helper->getLoginUrl(env('FACEBOOK_REDIRECT_URI'), self::$permissions);
-        } catch (FacebookSDKException $e) {
-        }
+        $uri = env('FACEBOOK_REDIRECT_URI');
+
+        $helper = self::getFacebookHelper();
+
+        return $helper->getLoginUrl($uri, self::$permissions);
+
     }
 }
