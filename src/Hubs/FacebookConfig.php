@@ -33,7 +33,7 @@ class FacebookConfig
      */
     public static function init()
     {
-        $permissions = explode(' ', env('FACEBOOK_APP_PERMISSIONS'));
+        self::$permissions = explode(' ', env('FACEBOOK_APP_PERMISSIONS'));
 
         $attributes = [
             'app_id' => env("FACEBOOK_APP_ID"),
@@ -42,7 +42,6 @@ class FacebookConfig
         ];
 
         if (!isset(self::$fb)) {
-            self::$permissions = $permissions;
 
             self::$fb = new Facebook ($attributes);
         }
