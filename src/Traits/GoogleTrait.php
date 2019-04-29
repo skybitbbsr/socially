@@ -18,7 +18,7 @@ trait GoogleTrait {
 
     private static function getAuthCode()
     {
-      if (isset($_GET['code'])) {
+        if (isset($_GET['code'])) {
             return $_GET['code'];
         }
     }
@@ -30,9 +30,7 @@ trait GoogleTrait {
     public static function googleLogin()
     {
         $gClient = GoogleConfig::getGoogleHelper();
-
-
-$token = self::getAuthCode();
+        $token = self::getAuthCode();
 
         $gClient->fetchAccessTokenWithAuthCode($token);
         self::$googleToken = $gClient->getAccessToken();
