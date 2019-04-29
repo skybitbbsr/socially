@@ -27,7 +27,7 @@ trait GoogleTrait {
      * @param string $token (optional)
      * @return \Google_Service_Oauth2_Userinfoplus
      */
-    public static function googleLogin($token = '')
+    public static function googleLogin()
     {
         $gClient = GoogleConfig::getGoogleHelper();
 
