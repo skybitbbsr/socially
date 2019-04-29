@@ -31,9 +31,8 @@ trait GoogleTrait {
     {
         $gClient = GoogleConfig::getGoogleHelper();
 
-        if (!isset($token)) {
-          $token = self::getAuthCode();
-        }
+
+$token = self::getAuthCode();
 
         $gClient->fetchAccessTokenWithAuthCode($token);
         self::$googleToken = $gClient->getAccessToken();
