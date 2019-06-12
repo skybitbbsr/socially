@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af5c4fe1a7f6fac18c12073755b6ca42",
+    "content-hash": "7136924beade58d849e5530e91491876",
     "packages": [
+        {
+            "name": "abraham/twitteroauth",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abraham/twitteroauth.git",
+                "reference": "9350ad14d53fb9b59a199eabdd630cf2f1fc9742"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/9350ad14d53fb9b59a199eabdd630cf2f1fc9742",
+                "reference": "9350ad14d53fb9b59a199eabdd630cf2f1fc9742",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^7.2 || ^7.3"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "~2.6",
+                "phpunit/phpunit": "~5.7",
+                "squizlabs/php_codesniffer": "~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Abraham\\TwitterOAuth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abraham Williams",
+                    "email": "abraham@abrah.am",
+                    "homepage": "https://abrah.am",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
+            "homepage": "https://twitteroauth.com",
+            "keywords": [
+                "Twitter API",
+                "Twitter oAuth",
+                "api",
+                "oauth",
+                "rest",
+                "social",
+                "twitter"
+            ],
+            "time": "2019-03-11T19:12:14+00:00"
+        },
         {
             "name": "facebook/graph-sdk",
             "version": "5.x-dev",
@@ -2914,6 +2968,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "vlucas/phpdotenv": 20,
+        "abraham/twitteroauth": 20,
         "phpunit/phpunit": 20
     },
     "prefer-stable": false,
