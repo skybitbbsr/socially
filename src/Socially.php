@@ -2,12 +2,9 @@
 
 namespace SkyBit\Socially;
 
-use Facebook\Exceptions\FacebookSDKException;
-use Google_Service_Oauth2;
-use SkyBit\Socially\Hubs\FacebookConfig;
-use SkyBit\Socially\Hubs\GoogleConfig;
 use SkyBit\Socially\Traits\FacebookTrait;
 use SkyBit\Socially\Traits\GoogleTrait;
+use SkyBit\Socially\Traits\TwitterTrait;
 
 /**
  * Class Socially
@@ -15,7 +12,7 @@ use SkyBit\Socially\Traits\GoogleTrait;
  */
 class Socially
 {
-    use FacebookTrait, GoogleTrait;
+    use FacebookTrait, GoogleTrait, TwitterTrait;
 
     /**
      * @var
